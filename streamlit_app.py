@@ -45,6 +45,12 @@ if ingredients_list and name_on_order:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
 
-import requests  
-smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
+import requests
+import streamlit as st
+
+url = "https://my.smoothiefroot.com/api/fruit/watermelon"
+
+smoothiefroot_response = requests.get(url)
+smoothiefroot_response.raise_for_status()  # optional but recommended
+
 st.text(smoothiefroot_response.json())
