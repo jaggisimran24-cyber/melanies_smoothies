@@ -32,6 +32,7 @@ if ingredients_list and name_on_order:
     ingredients_string = ''
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
+        st.subheader(fruit_chosen+' Nutritional Information')
         url = "https://my.smoothiefroot.com/api/fruit/watermelon"
         smoothiefroot_response = requests.get(url)
         smoothiefroot_response.raise_for_status()  # optional but recommended
