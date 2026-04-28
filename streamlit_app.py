@@ -2,7 +2,7 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
-st.write(st.secrets)
+#st.write(st.secrets)
 
 # Write directly to the app.
 st.title('My Parents New Healthy Diner')
